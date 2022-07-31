@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+// Initialize an object
+const car = {
+     type:'volvo',
+    color: 'Red',
+    number: 5   
+};
+
+// Initialize another object
+const somemore = {
+    vechicle:'car',
+    fruit: 'Mango',
+    movies: ["Spider Man", "Conjuring"],   
+};
+
+// Merge the objects
+document.write("assign() method :"+"    ");
+document.write(Object.assign(car, somemore));
+document.write("<br>"+"isFrozen() method  :"+" ");
+document.write(Object.isFrozen(car));
+
+function vechicles() {
+    this.name = 'bike';
+}
+function bullet() {
+    vechicles.call(this);
+}
+bullet.prototype = Object.create(vechicles.prototype);
+const app = new bullet();
+document.write("<br>"+"create() method  :"+" ");
+document.write(app.name);
+const obj=Object.seal(car);
+obj.color='black';
+document.write("<br>"+"seal() method  :"+" ");
+document.write(obj.color);
+document.write("<br>"+"isSealed() method  :"+" ");
+document.write(Object.isSealed(car));
+</script>
+
+</body>
+</html>
